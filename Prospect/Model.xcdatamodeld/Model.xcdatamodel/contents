@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Activity" representedClassName="Activity" syncable="YES">
+        <attribute name="auxiliary_images" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="profile_image" attributeType="Binary" syncable="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="primer" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Primer" inverseName="activities" inverseEntity="Primer" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="auxiliary_images" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="profile_image" attributeType="Binary" syncable="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="primer" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Primer" inverseName="people" inverseEntity="Primer" syncable="YES"/>
+    </entity>
+    <entity name="Place" representedClassName="Place" syncable="YES">
+        <attribute name="auxiliary_images" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="profile_image" attributeType="Binary" syncable="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="primer" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Primer" inverseName="places" inverseEntity="Primer" syncable="YES"/>
+    </entity>
+    <entity name="Primer" representedClassName="Primer" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="activities" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="primer" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="people" toMany="YES" deletionRule="Nullify" destinationEntity="Person" inverseName="primer" inverseEntity="Person" syncable="YES"/>
+        <relationship name="places" toMany="YES" deletionRule="Nullify" destinationEntity="Place" inverseName="primer" inverseEntity="Place" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Activity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Person" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Place" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Primer" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
